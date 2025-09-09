@@ -1,0 +1,65 @@
+<div class="min-h-screen flex items-center justify-center bg-[#181b20]">
+  <div class="bg-[#232b39] rounded-2xl shadow-lg p-8 w-full max-w-md border border-[#3a4664]">
+    <div class="flex flex-col items-center mb-6">
+      <div class="bg-green-600 rounded-full p-3 shadow-lg mb-2">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <rect x="3" y="3" width="7" height="7" rx="2" fill="currentColor"/>
+          <rect x="14" y="3" width="7" height="7" rx="2" fill="currentColor"/>
+          <rect x="14" y="14" width="7" height="7" rx="2" fill="currentColor"/>
+          <rect x="3" y="14" width="7" height="7" rx="2" fill="currentColor"/>
+        </svg>
+      </div>
+      <h2 class="text-2xl font-bold text-green-400 mb-1">AI Hub Login</h2>
+      <p class="text-gray-400 text-sm">Sign in to your account</p>
+    </div>
+    <form [formGroup]="userForm" (ngSubmit)="login()">
+      <div class="mb-4">
+        <label class="block text-gray-300 mb-1" for="email">Email</label>
+        <input
+          [(ngModel)]="user.email"
+          id="email"
+          type="email"
+          class="w-full px-4 py-2 rounded-lg bg-[#181b20] border border-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
+          placeholder="you@email.com"
+          formControlName="email"
+          value="{{ user.email }}"
+        />
+        <p class="text-red-500" *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+      Email is required
+    </p>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-300 mb-1" for="password">Password</label>
+        <input
+          [(ngModel)]="user.password"
+          id="password"
+          type="password"
+          class="w-full px-4 py-2 rounded-lg bg-[#181b20] border border-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
+          placeholder="••••••••"
+          formControlName="password"
+        />
+        <p class="text-red-500" *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched">
+      Password is required
+    </p>
+      </div>
+      <div class="flex items-center justify-between mb-6">
+        <!-- <label class="flex items-center text-gray-400 text-sm">
+          <input type="checkbox" class="form-checkbox rounded text-green-500 mr-2" />
+          Remember me
+        </label> -->
+        <a href="#" class="text-green-400 text-sm hover:underline">Forgot password?</a>
+      </div>
+      <button
+        (click)="login()"
+        type="submit"
+        class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-2 rounded-lg transition"
+      >
+        Sign In
+      </button>
+    </form>
+    <div class="mt-6 text-center">
+      <span class="text-gray-400 text-sm">Don't have an account?</span>
+      <a href="#" class="text-green-400 text-sm font-semibold hover:underline ml-1" [routerLink]="['/signup']">Sign Up</a>
+    </div>
+  </div>
+</div>

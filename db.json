@@ -1,0 +1,49 @@
+{
+  "tools": [
+    {
+      "name": "ChatGPT",
+      "rating": 4.8,
+      "plan": "freemium",
+      "description": "Advanced conversational AI for text generation, coding assistance, and creative writing",
+      "tags": ["conversation", "writing", "coding"],
+      "category": "Chatbots",
+      "icon": "https://fs.enterprisedna.co/tools/cover-images/0UwHydDM1WIri1i4vrMSCJQw5phKSDv4rEaBz3WI.webp"
+    },
+    {
+      "name": "Midjourney",
+      "rating": 4.5,
+      "plan": "subscription",
+      "description": "AI-powered image generation from text descriptions with artistic style",
+      "tags": ["art", "creative", "design"],
+      "category": "Image",
+      "icon": "https://fs.enterprisedna.co/tools/cover-images/0UwHydDM1WIri1i4vrMSCJQw5phKSDv4rEaBz3WI.webp"
+    },
+    {
+      "name": "GitHub Copilot",
+      "rating": 4.4,
+      "plan": "subscription",
+      "description": "AI pair programmer that helps write code faster and smarter",
+      "tags": ["programming", "development", "autocomplete"],
+      "category": "Coding",
+      "icon": "https://fs.enterprisedna.co/tools/cover-images/0UwHydDM1WIri1i4vrMSCJQw5phKSDv4rEaBz3WI.webp"
+    },
+    {
+      "name": "Runway ML",
+      "rating": 4.3,
+      "plan": "freemium",
+      "description": "Creative AI tools for video editing, generation, and manipulation",
+      "tags": ["video", "editing", "creative"],
+      "category": "Video",
+      "icon": "https://fs.enterprisedna.co/tools/cover-images/0UwHydDM1WIri1i4vrMSCJQw5phKSDv4rEaBz3WI.webp"
+    },
+    {
+      "name": "Notion AI",
+      "rating": 4.1,
+      "plan": "freemium",
+      "description": "AI writing assistant integrated into the Notion workspace platform",
+      "tags": ["productivity", "writing", "organization"],
+      "category": "Productivity",
+      "icon": "https://fs.enterprisedna.co/tools/cover-images/0UwHydDM1WIri1i4vrMSCJQw5phKSDv4rEaBz3WI.webp"
+    }
+  ]
+}

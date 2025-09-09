@@ -1,0 +1,121 @@
+<app-header></app-header>
+<app-herosection></app-herosection>
+<div class="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+        <div class="text-center mb-16">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Featured AI Tools</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Discover the most popular and
+                innovative AI tools that are transforming how we work and create.</p>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+                <div *ngFor="let tool of featuredTools"
+                    class="bg-[#232b39] border border-[#3a4664] rounded-2xl shadow-lg transition-all duration-300 hover:border-green-500 hover:shadow-2xl cursor-pointer">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <img [src]="tool.icon" [alt]="tool.name"
+                                    class="w-12 h-12 rounded-xl object-cover border border-gray-200 dark:border-gray-700" />
+                                <div>
+                                    <h3
+                                        class="text-lg font-bold text-white group-hover:text-green-400 transition-colors">
+                                        {{ tool.name }}
+                                    </h3>
+                                    <span class="inline-block px-2 py-0.5 rounded text-xs font-semibold" [ngClass]="{
+                  'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300': tool.plan === 'free',
+                  'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300': tool.plan === 'freemium',
+                  'bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300': tool.plan === 'subscription'
+                }">
+                                        {{ tool.plan }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-1 text-yellow-400">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z" />
+                                </svg>
+                                <span class="text-sm font-medium text-gray-200">{{ tool.rating }}</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4 text-left">{{ tool.description }}</p>
+                        <!-- <div class="flex flex-wrap gap-2 mb-4">
+                            <span *ngFor="let tag of tool.tags"
+                                class="bg-transparent border border-gray-400 text-gray-200 text-xs px-2 py-1 rounded-full">
+                                {{ tag }}
+                            </span>
+                        </div> -->
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-700">
+                            <div class="text-sm text-gray-400 capitalize">
+                                {{ tool.category }}
+                            </div>
+                            <div class="flex space-x-2">
+                                <button 
+                                    class="hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-900 dark:hover:text-red-400 rounded-full p-2 transition">
+                                    <svg (click)="AddToCart(tool.id)" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
+                                    </svg>
+                                </button>
+                                <button
+                                    class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold px-4 py-2 rounded transition flex items-center">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M14 3h7m0 0v7m0-7L10 14m-7 7h7a2 2 0 002-2v-7" />
+                                    </svg>
+                                    Try Now
+                                </button>
+                                <button
+                                    class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold px-4 py-2 rounded transition flex items-center">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                                    </svg>
+                                    Learn
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <button
+                class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold px-4 py-2 rounded-2xl mt-20" [routerLink]="['/directory']">View
+                All</button>
+        </div>
+
+
+        <div class="text-center mb-16">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Explore by Category</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Find AI tools organized by their
+                primary function and use case.</p>
+
+
+            <!-- ...existing code... -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-20">
+                <div *ngFor="let category of categories"
+                    class="bg-[#232b39] border border-[#3a4664] rounded-2xl shadow transition-all duration-300 hover:border-green-400 hover:shadow-xl cursor-pointer overflow-hidden flex flex-col items-center justify-center h-38">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3 mt-6 group-hover:scale-110 transition-transform bg-gradient-to-r"
+                        [ngClass]="category.categoryBgGradient">
+                        <img [src]="category.categoryIcon" alt="icon"
+                            class="w-5 h-5 object-contain filter brightness-0 invert" />
+                    </div>
+                    <h3 class="font-semibold text-white capitalize text-lg mb-4">{{ category.categoryName }}</h3>
+                </div>
+            </div>
+            <!-- ...existing code... -->
+
+            <button
+                class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold px-4 py-2 rounded-2xl mt-20" [routerLink]="['/directory']">View
+                All</button>
+
+        </div>
+
+    </div>
+</div>
+<app-footer></app-footer>
