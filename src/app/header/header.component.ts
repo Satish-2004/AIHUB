@@ -9,5 +9,17 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+    userName: string | null = "";
     showMenu = false;
+
+  ngOnInit() {
+    this.userName = JSON.parse(localStorage.getItem('userName') || 'null');
+  }
+
+    logout(){
+      localStorage.clear();
+      console.log("Logged out successfully");
+    }
+
+    
 }

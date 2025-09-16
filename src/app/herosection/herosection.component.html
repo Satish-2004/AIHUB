@@ -1,4 +1,4 @@
-<div class="relative isolate overflow-hidden bg-[#101726] min-h-[92vh] flex items-center justify-center hero-bg">
+<div class="relative isolate overflow-hidden bg-[#101726] min-h-[100vh] flex items-center justify-center hero-bg">
  
   <div class="relative max-w-4xl mx-auto text-center z-10 w-full px-4">
     <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
@@ -9,7 +9,7 @@
       AI Hub. Every <span class="text-green-300">AI Tool</span>. From text generation to image creation, discover and organize the most powerful AI tools in one elegant platform.
     </p>
     <!-- Search Bar -->
-    <form class="mt-10 max-w-2xl mx-auto" (submit)="onSearch()">
+    <!-- <form class="mt-10 max-w-2xl mx-auto" (submit)="onSearch()">
       <div class="input-glow-wrapper transition-shadow duration-300">
         <div class="relative flex items-center">
           <svg class="absolute left-4 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -31,7 +31,7 @@
           </button>
         </div>
       </div>
-    </form>
+    </form> -->
     <!-- CTA Buttons -->
     <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
       <a routerLink="/directory">
@@ -43,7 +43,7 @@
           Explore All Tools
         </button>
       </a>
-      <a routerLink="/categories">
+      <a routerLink="/directory">
         <button class="flex items-center border-2 border-green-500 text-green-400 font-semibold text-base px-8 py-3 rounded-xl hover:bg-green-500/10 hover:text-white hover:border-green-400 transition-all hover:-translate-y-1">
           <svg class="mr-2 h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor"/>

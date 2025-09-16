@@ -6,6 +6,7 @@ import { DirectoryComponent } from './directory/directory.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -16,5 +17,6 @@ export const routes: Routes = [
     {path: 'favorites', component: FavouritesComponent},
     {path: 'about', component: AboutComponent},
     {path: 'contact', component: ContactComponent},
-    {path: '**', redirectTo: 'login' }
+    {path: 'profile', component: ProfileComponent},
+    {path: '**', redirectTo: 'login', pathMatch: 'full' }
 ];

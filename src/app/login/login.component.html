@@ -24,7 +24,7 @@
           formControlName="email"
           value="{{ user.email }}"
         />
-        <p class="text-red-500" *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+        <p class="text-red-500" *ngIf="userForm.controls['email'].invalid && userForm.get('email')?.touched">
       Email is required
     </p>
       </div>
@@ -38,7 +38,7 @@
           placeholder="••••••••"
           formControlName="password"
         />
-        <p class="text-red-500" *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched">
+        <p class="text-red-500" *ngIf="userForm.controls['password'].invalid && userForm.get('password')?.touched">
       Password is required
     </p>
       </div>

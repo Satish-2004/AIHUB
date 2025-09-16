@@ -20,11 +20,13 @@ export class HomeComponent {
   featuredTools: Array<Tool> = [];
 
    categories: Array<Category> = [];
+   
 
 
   ngOnInit() {
     this.toolservice.getFeaturedTools().subscribe(tools => {
       this.featuredTools = tools;
+      console.log(tools);
     });
 
     console.log(this.featuredTools);

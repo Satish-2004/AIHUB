@@ -61,4 +61,15 @@ export class ToolsService {
     };
     return this.http.post<any>(`${this.url3}/userId/${this.userId}/toolId/${toolId}`, {}, options);
   }
+
+  removeFromCart(toolId: number): Observable<any> {
+    console.log(this.userId);
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.gettoken}`
+      })
+    };
+    return this.http.delete<any>(`${this.url3}/userId/${this.userId}/toolId/${toolId}`, options);
+  }
 }

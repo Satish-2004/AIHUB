@@ -1,13 +1,13 @@
-<nav class="flex items-center justify-between px-4 md:px-8 py-3 bg-[#181b20] shadow-sm">
+<nav class="flex items-center justify-between px-4 md:px-8 py-3 bg-[#181b20] shadow-sm fixed w-full top-0 z-50">
   <!-- Logo and Title -->
-  <div class="flex items-center space-x-3">
+  <div class="flex items-center space-x-3 hover:cursor-pointer" routerLink="/home">
     <div class="bg-green-600 rounded-full p-2 shadow-lg">
       <!-- Grid Icon -->
       <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <rect x="3" y="3" width="7" height="7" rx="2" fill="currentColor"/>
-        <rect x="14" y="3" width="7" height="7" rx="2" fill="currentColor"/>
-        <rect x="14" y="14" width="7" height="7" rx="2" fill="currentColor"/>
-        <rect x="3" y="14" width="7" height="7" rx="2" fill="currentColor"/>
+        <rect x="3" y="3" width="7" height="7" rx="2" fill="currentColor" />
+        <rect x="14" y="3" width="7" height="7" rx="2" fill="currentColor" />
+        <rect x="14" y="14" width="7" height="7" rx="2" fill="currentColor" />
+        <rect x="3" y="14" width="7" height="7" rx="2" fill="currentColor" />
       </svg>
     </div>
     <div>
@@ -19,110 +19,134 @@
   <div class="md:hidden">
     <button (click)="showMenu = !showMenu" class="text-gray-200 focus:outline-none">
       <svg *ngIf="!showMenu" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
       <svg *ngIf="showMenu" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
   </div>
   <!-- Navigation Links -->
   <div class="hidden md:flex items-center space-x-2 ml-8">
-    <a href="#" [routerLink]="['/home']" class="flex items-center px-4 py-2 rounded-lg  text-gray-200 hover:bg-green-700 transition" >
+    <a href="#" [routerLink]="['/home']" routerLinkActive="bg-green-700 text-white"
+      class="flex items-center px-4 py-2 rounded-lg  text-gray-200 hover:bg-green-700 transition">
       <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6"/>
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6" />
       </svg>
       Home
     </a>
-    <a href="#" [routerLink]="['/directory']" class="flex items-center px-4 py-2 rounded-lg text-gray-200 hover:bg-green-700 transition">
+    <a href="#" [routerLink]="['/directory']" routerLinkActive="bg-green-700 text-white"
+      class="flex items-center px-4 py-2 rounded-lg text-gray-200 hover:bg-green-700 transition">
       <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <rect x="3" y="3" width="7" height="7" rx="2" stroke="currentColor"/>
-        <rect x="14" y="3" width="7" height="7" rx="2" stroke="currentColor"/>
-        <rect x="14" y="14" width="7" height="7" rx="2" stroke="currentColor"/>
-        <rect x="3" y="14" width="7" height="7" rx="2" stroke="currentColor"/>
+        <rect x="3" y="3" width="7" height="7" rx="2" stroke="currentColor" />
+        <rect x="14" y="3" width="7" height="7" rx="2" stroke="currentColor" />
+        <rect x="14" y="14" width="7" height="7" rx="2" stroke="currentColor" />
+        <rect x="3" y="14" width="7" height="7" rx="2" stroke="currentColor" />
       </svg>
       Directory
     </a>
 
-    <a href="#" [routerLink]="['/favorites']" class="flex items-center px-4 py-2 rounded-lg text-gray-200 hover:bg-green-700 transition">
-     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <a href="#" [routerLink]="['/favorites']" routerLinkActive="bg-green-700 text-white"
+      class="flex items-center px-4 py-2 rounded-lg text-gray-200 hover:bg-green-700 transition">
+      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round"
           d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
       </svg>
       Favourites
     </a>
-    <a href="#" [routerLink]="['/about']" class="flex items-center px-4 py-2 rounded-lg text-gray-200 hover:bg-green-700 transition">
+    <a href="#" [routerLink]="['/about']" routerLinkActive="bg-green-700 text-white"
+      class="flex items-center px-4 py-2 rounded-lg text-gray-200 hover:bg-green-700 transition">
       <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" stroke="currentColor"/>
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 16v-4m0-4h.01"/>
+        <circle cx="12" cy="12" r="10" stroke="currentColor" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 16v-4m0-4h.01" />
       </svg>
       About
     </a>
-    <a href="#" [routerLink]="['/contact']" class="flex items-center px-4 py-2 rounded-lg text-gray-200 hover:bg-green-700 transition">
+    <a href="#" [routerLink]="['/contact']" routerLinkActive="bg-green-700 text-white"
+      class="flex items-center px-4 py-2 rounded-lg text-gray-200 hover:bg-green-700 transition">
       <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round"
           d="M3 8l7.89 5.26a3 3 0 003.22 0L22 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
       Contact
     </a>
-    <button class="flex items-center px-5 py-2 rounded-lg bg-[#181b20] border border-green-700 text-white font-semibold ml-2">
-      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <circle cx="12" cy="7" r="4" stroke="currentColor"/>
-        <path stroke-linecap="round" stroke-linejoin="round" d="M5.5 21a7.5 7.5 0 0113 0"/>
-      </svg>
-      zenitsu nezuko
-    </button>
+    <div class="relative group">
+      <button (click)="logout()"
+        class="flex items-center px-5 py-2 rounded-lg bg-[#181b20] border border-green-700 text-white font-semibold ml-2 focus:outline-none">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="7" r="4" stroke="currentColor" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5.5 21a7.5 7.5 0 0113 0" />
+        </svg>
+        {{userName}}
+      </button>
+      <button [routerLink]="['/login']" class="hover:bg-red-500 absolute ml-1 w-full bg-[#232b39] border border-green-700 text-white font-semibold px-5 py-2 rounded-lg shadow-lg transition-all duration-200
+      opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto z-50">
+        Logout
+      </button>
+    </div>
   </div>
   <!-- Mobile Menu -->
-  <div
-    class="md:hidden absolute top-16 left-0 w-full bg-[#181b20] shadow-lg z-50 transition-all duration-300"
-    *ngIf="showMenu"
-  >
+  <div class="md:hidden absolute top-16 left-0 w-full bg-[#181b20] shadow-lg z-50 transition-all duration-300"
+    *ngIf="showMenu">
     <div class="flex flex-col items-start space-y-2 px-6 py-4">
-      <a href="#" class="flex items-center w-full px-4 py-2 rounded-lg bg-green-700 text-white font-semibold">
+      <a routerLinkActive="bg-green-700 text-white" routerLink="/home" [routerLinkActiveOptions]="{ exact: true }"
+        class="flex items-center w-full px-4 py-2 rounded-lg bg-green-700 text-white font-semibold">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6"/>
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6" />
         </svg>
         Home
       </a>
-      <a href="#" class="flex items-center w-full px-4 py-2 rounded-lg text-gray-200 hover:bg-gray-800 transition">
+      <a routerLinkActive="bg-green-700 text-white" routerLink="/directory"
+        class="flex items-center w-full px-4 py-2 rounded-lg text-gray-200 hover:bg-gray-800 transition">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <rect x="3" y="3" width="7" height="7" rx="2" stroke="currentColor"/>
-          <rect x="14" y="3" width="7" height="7" rx="2" stroke="currentColor"/>
-          <rect x="14" y="14" width="7" height="7" rx="2" stroke="currentColor"/>
-          <rect x="3" y="14" width="7" height="7" rx="2" stroke="currentColor"/>
+          <rect x="3" y="3" width="7" height="7" rx="2" stroke="currentColor" />
+          <rect x="14" y="3" width="7" height="7" rx="2" stroke="currentColor" />
+          <rect x="14" y="14" width="7" height="7" rx="2" stroke="currentColor" />
+          <rect x="3" y="14" width="7" height="7" rx="2" stroke="currentColor" />
         </svg>
         Directory
       </a>
-     
-      <a href="#" class="flex items-center w-full px-4 py-2 rounded-lg text-gray-200 hover:bg-gray-800 transition">
+
+      <a href="#" routerLink="/favorites" routerLinkActive="bg-green-700 text-white"
+        class="flex items-center w-full px-4 py-2 rounded-lg text-gray-200 hover:bg-gray-800 transition">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
-      </svg>
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
+        </svg>
         Favourites
       </a>
-      <a href="#" class="flex items-center w-full px-4 py-2 rounded-lg text-gray-200 hover:bg-gray-800 transition">
+      <a href="#" routerLink="/about" routerLinkActive="bg-green-700 text-white"
+        class="flex items-center w-full px-4 py-2 rounded-lg text-gray-200 hover:bg-gray-800 transition">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="10" stroke="currentColor"/>
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 16v-4m0-4h.01"/>
+          <circle cx="12" cy="12" r="10" stroke="currentColor" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 16v-4m0-4h.01" />
         </svg>
         About
       </a>
-      <a href="#" class="flex items-center w-full px-4 py-2 rounded-lg text-gray-200 hover:bg-gray-800 transition">
-         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M3 8l7.89 5.26a3 3 0 003.22 0L22 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
+      <a href="#" routerLink="/contact" routerLinkActive="bg-green-700 text-white"
+        class="flex items-center w-full px-4 py-2 rounded-lg text-gray-200 hover:bg-gray-800 transition">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M3 8l7.89 5.26a3 3 0 003.22 0L22 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
         Contact
       </a>
-      <button class="flex items-center w-full px-4 py-2 rounded-lg bg-[#181b20] border border-gray-700 text-white font-semibold mt-2">
-        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <circle cx="12" cy="7" r="4" stroke="currentColor"/>
-          <path stroke-linecap="round" stroke-linejoin="round" d="M5.5 21a7.5 7.5 0 0113 0"/>
-        </svg>
-        zenitsu nezuko
-      </button>
+      <div class="relative group">
+        <button (click)="logout()"
+          class="flex items-center px-5 py-2 rounded-lg bg-[#181b20] border border-green-700 text-white font-semibold ml-2 focus:outline-none">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="7" r="4" stroke="currentColor" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.5 21a7.5 7.5 0 0113 0" />
+          </svg>
+          {{userName}}
+        </button>
+        <button [routerLink]="['/login']" class="hover:bg-red-500 absolute ml-1 w-full bg-[#232b39] border border-green-700 text-white font-semibold px-5 py-2 rounded-lg shadow-lg transition-all duration-200
+      opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto z-50">
+          Logout
+        </button>
+      </div>
     </div>
   </div>
 </nav>

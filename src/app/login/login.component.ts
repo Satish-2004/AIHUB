@@ -7,7 +7,7 @@ import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule, CommonModule, FormsModule, ReactiveFormsModule,],
+  imports: [RouterModule, CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -15,7 +15,7 @@ export class LoginComponent {
   constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) { }
   userForm!: FormGroup;
   submitted: Boolean = false;
-  users: any
+  users: any;
 
   user = {
     email: '',
@@ -23,10 +23,15 @@ export class LoginComponent {
   };
 
   ngOnInit() {
+    
+    
     this.userForm = this.fb.group({
-      email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)]],
+      // email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)]],
+      email: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)])
     });
+
+    console.log(this.userForm);
   }
 
   login() {
@@ -38,6 +43,7 @@ export class LoginComponent {
         console.log('User logged in successfully:', response);
         localStorage.setItem('token', JSON.stringify(response.jwtToken));
         localStorage.setItem('userid', JSON.stringify(response.userId));
+        localStorage.setItem('userName', JSON.stringify(response.userName));
         this.user.email = '';
         this.user.password = '';
         this.router.navigate(['/home']);

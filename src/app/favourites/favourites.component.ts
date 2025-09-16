@@ -25,4 +25,13 @@ export class FavouritesComponent {
       this.tools = items;
     });
 
-  }}
+  }
+
+  removeFromCart(toolId: number) {
+    this.toolservice.removeFromCart(toolId).subscribe(response => {
+      console.log('Tool removed from cart:', response);
+      this.tools = this.tools.filter(tool => tool.id !== toolId);
+    });
+  }
+
+}

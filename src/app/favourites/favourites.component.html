@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="bg-[#181b20] min-h-screen py-16">
-  <div class="max-w-6xl mx-auto px-4">
+  <div class="max-w-7xl mx-auto px-4">
     <h1 class="text-3xl font-bold text-green-400 mb-6">Your Cart</h1>
     <div>
       <div class="space-y-6">
@@ -43,23 +43,22 @@
                             {{ tool.category }}
                         </div>
                         <div class="flex space-x-2">
-                            <button
+                            <button (click)="removeFromCart(tool.id)"
                                 class="hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-900 dark:hover:text-red-400 rounded-full p-2 transition">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
-                                </svg>
+                                <svg class="w-5 h-5" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+  </svg>
                             </button>
-                            <button
+                            <a href="{{tool.link}}" target="_blank">
+                            <button 
                                 class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold px-4 py-2 rounded transition flex items-center">
                                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M14 3h7m0 0v7m0-7L10 14m-7 7h7a2 2 0 002-2v-7" />
-                                </svg>
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                        </svg>
                                 Try Now
                             </button>
+                            </a>
                             <button
                                     class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold px-4 py-2 rounded transition flex items-center">
                                     <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2"
@@ -74,11 +73,7 @@
             </div>
         </div>
       </div>
-      <div class="mt-8 flex justify-end">
-        <button class="bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold px-8 py-3 rounded-xl shadow-lg hover:from-green-600 hover:to-green-700 transition">
-          Checkout
-        </button>
-      </div>
+     
     </div>
     <ng-template #emptyCart>
       <div class="text-center text-gray-400 mt-20">
