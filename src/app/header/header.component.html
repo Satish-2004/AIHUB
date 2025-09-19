@@ -1,8 +1,6 @@
 <nav class="flex items-center justify-between px-4 md:px-8 py-3 bg-[#181b20] shadow-sm fixed w-full top-0 z-50">
-  <!-- Logo and Title -->
   <div class="flex items-center space-x-3 hover:cursor-pointer" routerLink="/home">
     <div class="bg-green-600 rounded-full p-2 shadow-lg">
-      <!-- Grid Icon -->
       <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <rect x="3" y="3" width="7" height="7" rx="2" fill="currentColor" />
         <rect x="14" y="3" width="7" height="7" rx="2" fill="currentColor" />
@@ -11,13 +9,12 @@
       </svg>
     </div>
     <div>
-      <div class="text-2xl font-bold text-green-400 leading-tight">AI Hub</div>
-      <div class="text-xs text-gray-300 leading-tight">One Hub. Every AI Tool.</div>
+      <div class="text-2xl font-bold text-green-400">AI Hub</div>
+      <div class="text-xs text-gray-300">One Hub. Every AI Tool.</div>
     </div>
   </div>
-  <!-- Hamburger for mobile -->
   <div class="md:hidden">
-    <button (click)="showMenu = !showMenu" class="text-gray-200 focus:outline-none">
+    <button (click)="showMenu = !showMenu" class="text-gray-200">
       <svg *ngIf="!showMenu" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
@@ -26,7 +23,6 @@
       </svg>
     </button>
   </div>
-  <!-- Navigation Links -->
   <div class="hidden md:flex items-center space-x-2 ml-8">
     <a href="#" [routerLink]="['/home']" routerLinkActive="bg-green-700 text-white"
       class="flex items-center px-4 py-2 rounded-lg  text-gray-200 hover:bg-green-700 transition">
@@ -73,7 +69,7 @@
     </a>
     <div class="relative group">
       <button (click)="logout()"
-        class="flex items-center px-5 py-2 rounded-lg bg-[#181b20] border border-green-700 text-white font-semibold ml-2 focus:outline-none">
+        class="flex items-center px-5 py-2 rounded-lg bg-[#181b20] border border-green-700 text-white font-semibold ml-2">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <circle cx="12" cy="7" r="4" stroke="currentColor" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M5.5 21a7.5 7.5 0 0113 0" />
@@ -86,7 +82,7 @@
       </button>
     </div>
   </div>
-  <!-- Mobile Menu -->
+
   <div class="md:hidden absolute top-16 left-0 w-full bg-[#181b20] shadow-lg z-50 transition-all duration-300"
     *ngIf="showMenu">
     <div class="flex flex-col items-start space-y-2 px-6 py-4">
@@ -135,7 +131,7 @@
       </a>
       <div class="relative group">
         <button (click)="logout()"
-          class="flex items-center px-5 py-2 rounded-lg bg-[#181b20] border border-green-700 text-white font-semibold ml-2 focus:outline-none">
+          class="flex items-center px-5 py-2 rounded-lg bg-[#181b20] border border-green-700 text-white font-semibold ml-2">
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <circle cx="12" cy="7" r="4" stroke="currentColor" />
             <path stroke-linecap="round" stroke-linejoin="round" d="M5.5 21a7.5 7.5 0 0113 0" />

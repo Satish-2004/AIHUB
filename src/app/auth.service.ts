@@ -9,8 +9,8 @@ import { AuthResponse } from './AuthResponse.model';
 export class AuthService {
 
   constructor(private http:HttpClient) { }
-  private urlsignup = "http://localhost:8080/auth/signup";
-  private urllogin = "http://localhost:8080/auth/signin";
+  private urlsignup = "http://13.51.161.177:8080/auth/signup";
+  private urllogin = "http://13.51.161.177:8080/auth/signin";
 
   signup(user: any): Observable<String>{
     return this.http.post<String>(this.urlsignup, user);

@@ -19,7 +19,7 @@ export class DirectoryComponent {
 
   categories: Array<string> = ["image", "video", "chatbots", "codeing", "audio", "3D", "analytics", "productivity", "marketing", "education", "health", "finance"];
 
-  filteredTools: any[] = [];
+  filteredTools: Array<Tool> = [];
   searchQuery: string = '';
   selectedCategory: string = 'All Categories';
   selectedPricing: string = 'All Pricing';

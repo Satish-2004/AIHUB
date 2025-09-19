@@ -10,9 +10,9 @@ import { Category } from '../categories.model';
 export class ToolsService {
 
   constructor(private http: HttpClient) { }
-  private url = "http://localhost:8080/tools";
-  private url2 = "http://localhost:8080/categories";
-  private url3 = "http://localhost:8080/users";
+  private url = "http://13.51.161.177:8080/tools";
+  private url2 = "http://13.51.161.177:8080/categories";
+  private url3 = "http://13.51.161.177:8080/users";
   gettoken = JSON.parse(localStorage.getItem('token') || '{}');
   userId = localStorage.getItem('userid') || '';
 
@@ -23,30 +23,30 @@ export class ToolsService {
 
   getFeaturedTools(): Observable<Tool[]>{
     const options = {
-    headers: new HttpHeaders({
+    headers: {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${this.gettoken}`
 
-    })}
+    }}
     return this.http.get<Tool[]>(this.url, options);
   }
 
   getCategories(): Observable<Category[]> {
     const options = {
-      headers: new HttpHeaders({
+      headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${this.gettoken}`
-      })
+      }
     };
     return this.http.get<Category[]>(this.url2, options);
   }
 
   getcartItems(userId: string): Observable<any> {
     const options = {
-      headers: new HttpHeaders({
+      headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.gettoken}`
-      })
+        'Authorization': `Bearer ${this.gettoken}` 
+      }
     };
     return this.http.get<any>(`${this.url3}/${userId}/tools`, options);
   }
@@ -54,10 +54,10 @@ export class ToolsService {
   addToCart(toolId: number): Observable<any> {
     console.log(this.userId);
     const options = {
-      headers: new HttpHeaders({
+      headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${this.gettoken}`
-      })
+      }
     };
     return this.http.post<any>(`${this.url3}/userId/${this.userId}/toolId/${toolId}`, {}, options);
   }
@@ -65,10 +65,10 @@ export class ToolsService {
   removeFromCart(toolId: number): Observable<any> {
     console.log(this.userId);
     const options = {
-      headers: new HttpHeaders({
+      headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${this.gettoken}`
-      })
+      }
     };
     return this.http.delete<any>(`${this.url3}/userId/${this.userId}/toolId/${toolId}`, options);
   }
