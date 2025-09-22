@@ -10,9 +10,9 @@ import { Category } from '../categories.model';
 export class ToolsService {
 
   constructor(private http: HttpClient) { }
-  private url = "http://localhost:8080/tools";
-  private url2 = "http://localhost:8080/categories";
-  private url3 = "http://localhost:8080/users";
+  private url = "http://13.61.187.96:8080/tools";
+  private url2 = "http://13.61.187.96:8080/categories";
+  private url3 = "http://13.61.187.96:8080/users";
   gettoken = JSON.parse(localStorage.getItem('token') || '{}');
   userId = localStorage.getItem('userid') || '';
 
