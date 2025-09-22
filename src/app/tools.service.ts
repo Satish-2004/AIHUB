@@ -19,6 +19,7 @@ export class ToolsService {
 
   ngOnInit(){
     console.log(this.gettoken);
+    console.log("");
   }
 
   getFeaturedTools(): Observable<Tool[]>{
