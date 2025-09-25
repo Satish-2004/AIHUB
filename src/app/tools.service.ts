@@ -10,15 +10,16 @@ import { Category } from '../categories.model';
 export class ToolsService {
 
   constructor(private http: HttpClient) { }
-  private url = "http://13.60.59.241:8080/tools";
-  private url2 = "http://13.60.59.241:8080/categories";
-  private url3 = "http://13.60.59.241:8080/users";
+  private url = "http://13.51.161.177:8080/tools";
+  private url2 = "http://13.51.161.177:8080/categories";
+  private url3 = "http://13.51.161.177:8080/users";
   gettoken = JSON.parse(localStorage.getItem('token') || '{}');
   userId = localStorage.getItem('userid') || '';
 
 
   ngOnInit(){
     console.log(this.gettoken);
+    console.log("");
   }
 
   getFeaturedTools(): Observable<Tool[]>{
